@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>学生管理系统</title>
+    <style>
+
+        body{
+             margin: 0;
+             padding: 0;
+        }
+
+        .box{
+            background-color: rgb(50, 50, 228);
+            height: 95vh;   
+            display: flex; 
+   
+            justify-content: center;
+            align-items: center;
+            margin: 0;
+        }
+        
+        .student-list{
+            background-color: white;
+            width: 80%;
+   
+            text-align: center;
+            border-radius: 5px;
+            height: 80%;
+            padding: 20px;
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            flex-direction: column;
+        }
+
+        table{
+            width: 80%;
+            border: 1px black solid;
+            margin: 0,auto;
+            
+        }
+
+        tr:nth-child(even){
+            background-color: rgb(234, 243, 237);
+        }
+
+        tr:nth-child(odd){
+            background-color: rgb(204, 203, 201);
+        }
+        thead th{
+            background-color: rgb(200, 214, 206);
+            font-size: 25px;
+        }
+        tbody{
+            font-size: 20px;
+        }
+        input,select{
+            margin: 10px;
+            padding: 10px;
+            width: 100px;
+        }
+        button{
+            width: 80px;
+        }
+        form{
+            width: 80%;
+        }
+      .head{
+        background-color: rgb(50, 50, 228);
+        color: white;
+        font-size: x-large;
+      }
+      .page-box{
+        margin: 20px;
+      }
+
+          /* 遮罩层 */
+    #overlay {
+      display: none;
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background-color: rgba(0,0,0,0.5);
+      z-index: 999;
+    }
+
+    /* 弹窗 */
+    #popup {
+      display: none;
+      position: fixed;
+      top: 50%; left: 50%;
+      transform: translate(-50%, -50%);
+      background: white;
+      padding: 20px;
+      border-radius: 5px;
+      z-index: 1000;
+      box-shadow: 0 0 10px rgba(0,0,0,0.3);
+    }
+
+    #popup button {
+      margin-top: 10px;
+    }
+
+    button{
+        margin-left: 20px;
+        padding: 5px;
+    }
+
+    td button{
+        margin: 5px;
+        padding: 0px;
+        width: 50px;
+    }
+
+    </style>
+</head>
+<body>
+    <div class="head">欢迎回来： <span id="username"></span></div> 
+    <div class="box">   
+
+
+        <div class="student-list">
+          
+            <div id="search">
+                     <button id="addStudent">新增</button>
+                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <input id="studentName" type="text" placeholder="请输入用户名">
+                <input id="classId" type="text" placeholder="请输入班级编号">
+                <button id="findStudent">查询</button>
+            </div>
+             
+            <hr>         
+            <table>
+                <thead>
+                    <tr>
+                        <th>学号</th>
+                        <th>姓名</th>
+                        <th>性别</th>
+                        <th>年龄</th>
+                        <th>班级id</th>
+                        <th>班级名称</th>
+                        <th>操作</th>
+                    </tr>
+                </thead>
+                <tbody>
+      
+                </tbody>
+            </table>
+            <div class="page-box">
+                <button id="prePage">上一页</button>
+                <span id="currentPage">1</span>
+                <button id="nextPage">下一页</button>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 共<span id="totalPage">1</span>页
+            </div>
+        </div>
+    </div>
+    
+    <!-- 弹窗 -->
+
+
+  <!-- 遮罩和弹窗 -->
+  <div id="overlay"></div>
+  <div id="popup">
+    <h2 id="popupTitle"></h2> 
+    <input type="hidden" id="f_studentId">
+    <input type="text" id="f_name" placeholder="学生姓名">
+    <select name="" id="f_gender">
+        <option value="" disabled selected hidden>请选择性别</option>
+        <option value="男">男</option>
+        <option value="女">女</option>
+    </select><br>
+
+    <input type="text" id="f_age" placeholder="年龄">
+    <select name="" id="f_class">
+        
+        
+    </select><br>
+    <button id="saveStudent">确定</button>
+    <button id="closePopup">关闭</button>
+  </div>
+
+    <script src="js/jquery-3.7.1.js"></script>
+    <script src="js/student.js"></script>
+
+</body>
+</html>
