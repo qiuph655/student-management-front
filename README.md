@@ -3,8 +3,8 @@
 
 本プロジェクトは前後端分離構成です。以下の2つのリポジトリがあります：
 
-- フロントエンド: [frontend repository](https://github.com/yourusername/frontend-repo)
-- バックエンド: [backend repository](https://github.com/yourusername/backend-repo)
+- フロントエンド:(https://github.com/qiuph655/student-management-front.git)
+- バックエンド:(https://github.com/qiuph655/student-management-backend.git)
 
 ## 📌 セットアップ手順 / Setup Instructions
 
