@@ -1,5 +1,21 @@
-# 学生管理システム
 
+# 学生管理システム / Student Management System
+
+本プロジェクトは前後端分離構成です。以下の2つのリポジトリがあります：
+
+- フロントエンド: [frontend repository](https://github.com/yourusername/frontend-repo)
+- バックエンド: [backend repository](https://github.com/yourusername/backend-repo)
+
+## 📌 セットアップ手順 / Setup Instructions
+
+1. **バックエンド**  
+   - リポジトリをクローン
+   - MySQL 設定を `application.properties` に記載
+   - Spring Boot アプリを起動
+
+2. **フロントエンド**  
+   - リポジトリをクローン
+   - HTML ファイルをブラウザで開く
 ## プロジェクト概要
 本システムは、学生とコースを管理するための Web アプリケーションです。  
 ログイン認証、学生情報管理、コース登録、権限管理（管理者／学生）などの機能を実装しました。
